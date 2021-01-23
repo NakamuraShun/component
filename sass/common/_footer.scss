@@ -2,33 +2,185 @@
 _footer.scss
 *******************************************************************************************************************/
 
-/* gototop
+/* pagetop
 -------------------------------------------------- */
-.pagetop{
-    color: #333;
+.pagetopWrap{
+    padding: 0 0 !important;
+    color: $color-b1;
     background-color: #fff;
     border-top: 1px solid rgba(184, 180, 180, 0.6);
     
-    & > a {
+    .pagetopContainer{
+        position: relative;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1100px;
+    }
+}
+
+.pagetop {
+    width: 100%;
+    height: 100%;
+    
+    &__lnk {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-pack: center;
         -ms-flex-pack: center;
-        justify-content: center;
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
+        justify-content: center;
         width: 100%;
-        padding: 15px;
-        font-size: 1.6rem;
-        text-align: center;
+        padding: 10px 0;
         -webkit-transition: all .3s;
         transition: all .3s;
         
         &:hover {
             color: #fff;
-            background-color: rgb(7, 167, 7);
+            background-color: $color-t1;
         }
+    }
+}
+
+
+/* footer
+-------------------------------------------------- */
+.footerMainWrap{
+    font-size: 1.4rem;
+    background-color: $color-g1;
+    
+    .footerMainContainer{
+        position: relative;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0 50px;
+        max-width: 1100px;
+        
+        & .row>[class*=col-]:not(:last-child){
+            margin-bottom: 30px;
+        }
+    }  
+} 
+
+
+.footerOrganization {
+    & [class*="footerOrganization__"] {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        
+        & span {
+            margin-right: 0.5px;
+            color: $color-t1;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+    } 
+}
+
+.footerSitemap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    
+    &__box{
+        & li {
+            margin-bottom: 10px;
+        } 
+        
+        &:not(:last-child){
+            margin-right: 30px;
+        }
+    }
+    
+    &__lnk{        
+        & span {
+            font-size: 1.1rem;
+            color: $color-t1;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+    } 
+}
+
+
+@media (min-width: $bp-md){
+    .footerWrap{
+        .footerMainContainer{
+            padding-right: $container-p;
+            padding-left: $container-p;
+            
+            & .row>[class*=col-]:not(:last-child){
+                margin-bottom: 0;
+            }
+        }
+    }
+    
+    .footerSitemap {
+        &__box:not(:last-child){
+            margin-right: 30px;
+        }
+    } 
+}
+
+/* footerSubWrap
+-------------------------------------------------- */
+.footerSubWrap{
+    padding: 4px 0 !important;
+    color: #fff;
+    font-size: 1.4rem;
+    background-color: $color-t1; 
+    
+    .footerSub{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        
+        .footerSubNav{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            
+            &__itm > a {
+                padding:0 10px;
+                color: #fff;
+                text-decoration: underline;
+                
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+        
+        .footerSubTxt{
+            .copyright{}
+        }
+    }
+    
+    
+}
+
+@media (min-width: $bp-md){
+    .footerSubWrap{
+        .footerSub{
+            -ms-flex-direction: row;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
     }
 }

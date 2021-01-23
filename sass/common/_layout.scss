@@ -11,26 +11,28 @@ _layout.scss
 
 /*  ***Wrap
 -------------------------------------------------- */
-[class*="Wrap"] {padding: 30px 0;}
+[class*="Wrap"] {padding: 50px 0;}
 
-@media (min-width: $bp-md) {[class*="Wrap"] {padding: 45px 0;}}
-@media (min-width: $bp-lg) {[class*="Wrap"] {padding: 75px 0;}}
+@media (min-width: $bp-md) {[class*="Wrap"] {padding: 50px 0;}}
+@media (min-width: $bp-lg) {[class*="Wrap"] {padding: 50px 0;}}
 
 /*  .l-container
 -------------------------------------------------- */
 .l-container {
     margin-right: auto;
     margin-left: auto;
-    max-width: 1200px;
+    max-width: 1100px;
     padding-right: $container-p;
     padding-left: $container-p;
     position: relative;
 }
 
 .l-container--fluid {
+    margin-right: auto;
+    margin-left: auto;
     max-width: 100%;
-    padding-right: 0;
-    padding-left: 0;
+    padding-right: $container-p;
+    padding-left: $container-p;
     position: relative;
 }
 
@@ -39,8 +41,6 @@ _layout.scss
 /* -----------------------------------------------
 /* topPage     [h-***]
 -------------------------------------------------- */
-
-
 
 /* #h-CONSEPT
 -------------------------------------------------- */

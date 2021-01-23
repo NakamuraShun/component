@@ -12,10 +12,10 @@ $(function ()
         speed: 1000, //次のスライドに切り替わるまでの秒数 (短いと必然的にスライド速度が上がる)
     });
 
-    $('.sampleASlide').slick({
+    $('.columnSlide').slick({
         dots: true,
         infinite: true, //ループ
-        speed: 400,
+        speed: 500,
         slidesToShow: 4,
         slidesToScroll: 4,
         responsive: [

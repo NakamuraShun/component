@@ -5,71 +5,30 @@ _typography.scss
 -------------------------------------------------- */
 [class*="prg-"] {padding-top: 7.5px; line-height: 2.0;}
 [class*="prg-"] p + p { margin-top: 7.5px;}
-
-.prg-xl {font-size: 2.0rem; line-height: 1.2;}
-.prg-l  {font-size: 1.8rem; line-height: 1.2;}
-.prg-m  {font-size: 1.5rem; line-height: 1.8;}
-.prg-s  {font-size: 1.3rem; line-height: 1.8;}
-.prg-xs {font-size: 1.1rem; line-height: 1.5;}
-
-@media (max-width: 767px) {
-    [class*="prg-"] .richtext p br {
-        display: none;
-    }
-}
-
-@media (min-width: 768px) {
-    [class*="prg-"] {
-        padding-top: 15px;
-        line-height: 2.0;
-    }
-    [class*="prg-"] p + p {
-        margin-top: 15px;
-    }
-    .prg-xl {
-        font-size: 1.8rem;
-        line-height: 1.2;
-    }
-    .prg-l {
-        font-size: 1.6rem;
-        line-height: 1.5;
-    }
-    .prg-m {
-        font-size: 1.4rem;
-        line-height: 1.8;
-    }
-    .prg-s {
-        font-size: 1.3rem;
-        line-height: 1.8;
-    }
-    .prg-xs {
-        font-size: 1.1rem;
-        line-height: 1.5;
-    }
-}
-
-@media (min-width: 992px) {
-    .prg-xl {
-        font-size: 2.4rem;
-    }
-    .prg-l {
-        font-size: 1.8rem;
-    }
-    .prg-m {
-        font-size: 1.6rem;
-    }
-    .prg-s {
-        font-size: 1.4rem;
-    }
-    .prg-xs {
-        font-size: 1.1rem;
-        line-height: 1.5;
-    }
-}
+.prg-xl {font-size: 1.8rem;line-height: 1.2;}
+.prg-l {font-size: 1.6rem;line-height: 1.5;}
+.prg-m {font-size: 1.4rem;line-height: 1.8;}
+.prg-s {font-size: 1.3rem;line-height: 1.8;}
+.prg-xs {font-size: 1.1rem;line-height: 1.5;}
 
 [class*="prg-"] .richtext p a {
     text-decoration: underline;
 }
+
+@media (min-width: $bp-md) {
+    [class*="prg-"] {padding-top: 15px;line-height: 2.0;}
+    [class*="prg-"] p + p {margin-top: 15px;}
+    .prg-xl {font-size: 2.0rem; line-height: 1.2;}
+    .prg-l  {font-size: 1.8rem; line-height: 1.2;}
+    .prg-m  {font-size: 1.5rem; line-height: 1.8;}
+    .prg-s  {font-size: 1.3rem; line-height: 1.8;}
+    .prg-xs {font-size: 1.1rem; line-height: 1.5;}
+}
+
+@media (max-width: $bp-md) {
+    [class*="prg-"] .richtext p br {display: none;}
+}
+
 
 /* Title     [ttl-***]
 -------------------------------------------------- */

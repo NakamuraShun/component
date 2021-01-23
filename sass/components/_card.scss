@@ -3,7 +3,8 @@ _card.scss
 *******************************************************************************************************************/
 /*  Card      [crd-***]
 -------------------------------------------------- */
-.crd-TypeA {
+.crd-typeA {
+    color: $color-b1;
     overflow: hidden;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -13,10 +14,13 @@ _card.scss
     -ms-flex-direction: column;
     flex-direction: column;
     position: relative;
-    margin-bottom: 1.5rem;
+    margin-bottom: 15px;
     height: calc(100% - 15px);
     background-color: #fff;
-    border: 3px solid #f1f1f1;
+    border: 5px solid;
+    border-color: $color-g1;
+    -webkit-transition: all .2s;
+    transition: all .2s;
     
     &__img {
         position: relative;
@@ -25,6 +29,20 @@ _card.scss
         background-repeat: no-repeat;
         background-position: center center;
         background-color: #000;
+        /*padding-top: 33.3333%;*/
+        /* 3:1 */
+        /*padding-top: 40%; */
+        /* 5:2 */
+        /*padding-top: 50%;*/
+        /* 2:1 */
+        padding-top: 56.25%;
+        /* 16:9; */
+        /*padding-top: 66.66667%;*/
+        /* 3:2 */
+        /*padding-top: 75%;*/
+        /* 4:3 */
+        /*padding-top: 200%;*/
+        /* 1:2 */
     }
     
     &__content {
@@ -35,58 +53,66 @@ _card.scss
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
+        justify-content: space-between;
         height: 100%;
-        padding: 1.5rem;
+        padding: 10px;
     }
     
-    &__img {
-        /*padding-top: 33.3333%;*/
-        /* 3:1 */
-        padding-top: 40%;
-        /* 5:2 */
-        /*padding-top: 50%;*/
-        /* 2:1 */
-        /*padding-top: 56.25%;*/
-        /* 16:9; */
-        /*padding-top: 66.66667%;*/
-        /* 3:2 */
-        /*padding-top: 75%;*/
-        /* 4:3 */
-        /*padding-top: 200%;*/
-        /* 1:2 */
+    &__ttl {            
+        & > [class*="hdg-"] {
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
     }
     
-    &__ttl {
-        margin-bottom: .8rem;
+    &__icon {
+        margin-top: 10px;  
+        color: $color-g1;
+        & span{color: #fe4a49;font-weight: bold;}
     }
     
-    &__txt {
-        margin-bottom:1.5rem;
+    &__cat {
+        position: absolute;
+        top:0;
+        left:0;
+        width: 80px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        justify-content: center;
+        line-height: 2.4;
+        letter-spacing: 1.5px;
+        color: #fff;
+        background: rgba(0,0,0,.6);
+    }
+    
+    &:hover{
+        border-color: $color-t1;
+        -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.15);
+        box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    }
+    
+    /* --column */
+    &--column{       
+        &:hover{
+            border-color: $color-s1;
+            box-shadow: none;
+        }
+    }
+}
+@media (min-width: $bp-lg) {  
+    .crd-typeA {
+        &--column{
+            margin: 0 10px;
+        }
     }
 }
 
 
-@media (min-width: $bp-md) {
-    .crd-TypeA__img {
-        /*padding-top: 33.3333%;*/
-        /* 3:1 */
-        /*padding-top: 40%;*/
-        /* 5:2 */
-        /*padding-top: 50%;*/
-        /* 2:1 */
-        /*padding-top: 56.25%;*/
-        /* 16:9; */
-        padding-top: 66.66667%;
-        /* 3:2 */
-        /*padding-top: 75%;*/
-        /* 4:3 */
-        /*padding-top: 200%;*/
-        /* 1:2 */
-    }
-}
-
-
-.crd-TypeB {
+.crd-typeB {
     height: 110px;
     overflow: hidden;
     display: -webkit-box;
@@ -137,7 +163,7 @@ _card.scss
 }
 
 @media (min-width: $bp-md) {  
-    .crd-TypeB {
+    .crd-typeB {
         height: 100%;
         height: calc(100% - 15px);
         -webkit-box-orient: vertical;
@@ -184,6 +210,97 @@ _card.scss
 
 
 
+/* crd-external
+-------------------------------------------------- */
+.crd-external {
+    color: $color-b1;
+    min-width: 300px;
+    height: 160px;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border: 1px solid $color-g1;
+    
+    &__img {
+        width: 30%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-color: $color-b1;
+    }
+    
+    &__content {
+        flex: 1;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        padding: 15px;
+    }
+    
+    &__ttl {
+        display: flex;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-bottom: 3px;
+        margin-bottom: 5px;
+        border-bottom: 1px solid currentColor;
+        
+        & span {
+            color: $color-g1;
+        }
+    }
+    
+    &__txt {
+        font-size: 1.4rem;
+    }
+    &__lnk {
+        font-size: 1.4rem;
+    }
+}
+
+@media (min-width: $bp-md) {  
+    .crd-external {
+        min-width: 100%;
+        
+        &__img {
+            width: 40%;
+        }
+        
+        &__ttl {
+            padding-bottom: 5px;
+            margin-bottom: 1px;
+        }
+        
+        &__txt {
+            font-size: 1.4rem;
+        }
+        &__lnk {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+
 /* -----------------------------------------------
 /* 2-3. sampleASlide
 -------------------------------------------------- */
@@ -210,9 +327,3 @@ _card.scss
     }
 }
 
-
-
-
-
-
-.styleTest{color: red;}
